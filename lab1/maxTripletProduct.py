@@ -1,0 +1,1 @@
+def maxTripletProduct(arr)
