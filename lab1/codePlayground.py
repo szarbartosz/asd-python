@@ -1,2 +1,2 @@
-for i in range(1, 10, 2):
-    print("hey")
+a, b, c = 4, 4, 4
+print(a,b,c)
