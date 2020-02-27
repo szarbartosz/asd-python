@@ -8,7 +8,6 @@ def selectionSort(arr):
                 minIndex = j
         arr[i], arr[minIndex] = arr[minIndex], arr[i]
 
-
 arr = [4,9,6,8,3,8,9,6,3,5,1,2]
 print("unsorted array: ")
 print(arr)
