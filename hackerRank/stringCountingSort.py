@@ -13,8 +13,9 @@ if __name__ == '__main__':
 
     countEl = [] * 100
     for _ in range(100):
-        countEl.append([])
-
+        countEl.append([]) #very important step -> this way of appending new list to create 2D array
+                           #will guarantee proper appending of the elements at the end of the excercise
+                           #->it didn't work with: countEl = [[]] * 100
 
     for j in range(len(arr)):
         countEl[arr[j][0]].append(arr[j][1])
