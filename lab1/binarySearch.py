@@ -1,7 +1,7 @@
 #binarySearch - O(log(n))
 def binarySearch(sortedArr, beg, end, key):
     if end >= beg:
-        mid = (beg + end) // 2
+        mid = beg + (end - beg) // 2
         if sortedArr[mid] == key:
             print("element:", sortedArr[mid], "found at index:", mid)
             return mid
