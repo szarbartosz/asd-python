@@ -1,7 +1,7 @@
 def bubbleSort(arr):
     sorted = True
     n = len(arr)
-    for i in range(n):
+    for i in range(n - 1):
         for j in range(n - i - 1):
             if arr[j] > arr[j+1]:
                 sorted = False
@@ -32,6 +32,6 @@ def selectionSort(arr):
 arr = [4,9,6,8,3,8,9,6,3,5,1,2]
 print("unsorted array: ")
 print(arr)
-selectionSort(arr)
+bubbleSort(arr)
 print("sotred array: ")
 print(arr)
