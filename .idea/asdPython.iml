@@ -5,6 +5,9 @@
       <sourceFolder url="file://$MODULE_DIR$/lab1" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/simpleSortingAlgorithms" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/sortingAlgorithms" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/hackerRank" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/bitAlgo" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/linkedList" isTestSource="false" />
     </content>
     <orderEntry type="jdk" jdkName="Python 3.7 (helloWorld)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
