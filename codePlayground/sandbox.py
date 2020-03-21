@@ -5,5 +5,3 @@ def NWD(a,b):
         b = c
     print(a)
 
-
-NWD(8,96)
