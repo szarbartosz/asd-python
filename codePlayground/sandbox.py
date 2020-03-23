@@ -5,3 +5,5 @@ def NWD(a,b):
         b = c
     print(a)
 
+arr = [0] * 10
+print(arr)
