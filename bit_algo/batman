@@ -1,0 +1,3 @@
+f(leaf)  = leaf -> val
+
+f(node) = max(node -> val, f(child) for cjild in node -> adj)

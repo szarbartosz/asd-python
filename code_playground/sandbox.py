@@ -7,3 +7,6 @@ def NWD(a,b):
 
 arr = [0] * 10
 print(arr)
+
+tab = [[1,2,3],[4,5,6]]
+print(tab[0][1])

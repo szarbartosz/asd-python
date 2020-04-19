@@ -4,12 +4,12 @@ class Node:
         self.next = None
 
 
-class LinkedList:
+class List:
     def __init__(self):
         self.first = None
         self.last = None
 
-    def isEmpty(self):
+    def is_empty(self):
         return self.first is None
 
     def add(self, val):
@@ -21,13 +21,11 @@ class LinkedList:
         self.last.next = tmp
         self.last = tmp
 
-
-
-    def makeFromArray(self, arr):
+    def make_from_array(self, arr):
         for i in range(len(arr)):
             self.add(arr[i])
 
-    def printList(self):
+    def print(self):
         tmp = self.first
         while tmp is not None:
             print(tmp.data)
@@ -35,9 +33,9 @@ class LinkedList:
 
 
 if __name__ == "__main___":
-    lis = LinkedList()
+    lis = List()
     lis.add(1)
-    lis.printList()
+    lis.print()
     arr = [1, 2, 3]
-    lis.makeFromArray(arr)
-    lis.printList()
+    lis.make_from_array(arr)
+    lis.print()

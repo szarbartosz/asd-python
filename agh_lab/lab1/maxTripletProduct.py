@@ -1,4 +1,4 @@
-from sortingAlgorithms import merge_sort
+from sorting_algorithms import merge_sort
 
 def maxTripletProduct(arr):
     merge_sort.mergeSort(arr)

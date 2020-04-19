@@ -1,0 +1,6 @@
+f(i) = for s in S:
+    if s is suffix of t[0..i]:
+        f(i) = max(f(i), min(len(s), f(i - len(s))))
+
+f(i != 0) = -infinity
+f(i == 0) = infinity || 1 (t[i] in S)

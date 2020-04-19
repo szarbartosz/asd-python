@@ -1,0 +1,38 @@
+class Activity:
+    def __init__(self, parent):
+        self.parent = parent
+
+
+def solution(arr):
+    activities = []
+    events = []
+
+    for i in range(len(arr)):
+        activities.append(Activity(""))
+        events.append((i[0], 1, i))
+        events.append((i[0], -1, i))
+
+    events.sort(key = getFirst)
+
+    C = 0
+    J = 0
+
+    for i in events:
+        if i[1] == 1:
+            if C == 0:
+                C += 1
+                activities[i[2]].parent = "C"
+                continue
+            if J == 0:
+                J += 1
+                activities[i[2]].parent = "J"
+                continue
+            return "IMPOSSIBLE"
+        else:
+            if activities[i[2]].parent == "C":
+                C -= 1
+            else:
+                J -= 1
+        result = ""
+        for i in activities:
+            result += i.parent

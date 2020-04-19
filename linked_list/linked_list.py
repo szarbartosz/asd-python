@@ -4,32 +4,32 @@ class Node:
         self.next = None
 
 
-class LinkedList:
+class List:
     def __init__(self):
         self.head = None
 
-    def isEmpty(self):
+    def is_empty(self):
         return self.head is None
 
-    def printList(self):
+    def print(self):
         tmp = self.head
         while tmp is not None:
             print(tmp.data)
             tmp = tmp.next
 
-    def addToList(self, val):
+    def add(self, val):
         tmp = Node(val)
         tmp.next = self.head
         self.head = tmp
 
-    def removeFromList(self, val):
+    def remove(self, val):
         if self.head is None:
             return
         elif self.head.next is None:
             if self.head.data == val:
-                toDelete = self.head
+                to_delete = self.head
                 self.head = self.head.next
-                toDelete.next = None
+                to_delete.next = None
                 return
             else:
                 return
@@ -37,20 +37,20 @@ class LinkedList:
             tmp = self.head
             while tmp.next is not None:
                 if tmp.next.data == val:
-                    toDelete = tmp.next
+                    to_delete = tmp.next
                     tmp.next = tmp.next.next
-                    toDelete.next = None
+                    to_delete.next = None
                     return
 
 
 if __name__=='__main__':
-    lis = LinkedList()
+    lis = List()
 
-    lis.addToList(1)
-    lis.addToList(2)
-    lis.addToList(3)
+    lis.add(1)
+    lis.add(2)
+    lis.add(3)
 
-    lis.removeFromList(2)
-    lis.printList()
+    lis.remove(2)
+    lis.print()
 
-    print(lis.isEmpty())
+    print(lis.is_empty())

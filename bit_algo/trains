@@ -1,0 +1,23 @@
+class Train:
+    def __init__(self, arrival_time, departure_time):
+        self.arrival_time = arrival_time
+        self.departure_time = departure_time
+
+
+def get_first(tuple):
+    return tuple[0]
+
+
+def solution(times, m):
+    events = []
+    for train in times:
+        events.append(train[0], 1)
+        events.append(train[1], -1)
+    sort(events, key = getFirst)
+    count = 0
+    for event in events:
+        count += event[1]
+        if count > m:
+            return False
+    return True
+
