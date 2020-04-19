@@ -1,0 +1,38 @@
+1) Proszę zaprojektowac strukturę danych przechowującą liczby i pozwalającą na następujące
+operacje (zakładamy, że wszystkie liczby umieszczane w strukturze są różne):
+Init(n). Tworzy zadaną strukturę danych zdolną pomieścić maksymalnie n liczb.
+Insert(x). Dodaje do struktury liczbę x.
+RemoveMin() Znajduje najmniejszą liczbę w strukturze, usuwa ją i zwraca jej wartość.
+RemoveMax() Znajduje największą liczbę w strukturze, usuwa ją i zwraca jej wartość.
+Każda z operacji powinna mieć złożoność O(log n, gdzie n to ilość liczb znajdujących się obecnie
+w strukturze. W tym zadaniu nie trzeba implementować podanych operacji, a jedynie
+przekonująco opisać jak powinny być zrealizowane i dlaczego mają wymaganą złożoność.
+
+-> 2 kopce - 1 min i 1 max + słownik
+init(n) - tworzymy 2 puste tablice (kopce) i 1 pusty słownik O(1)
+insert(x) - wrzucamy do kopca max i kopca min -> w słowniku pod kluczem równym wstawianej wartośći zapisujemy indeksy pod którymi wspomniana liczba znajduje się w obu kopcach - O(log(n))
+remove_min() -  pobieramy roota z kopca min -> w słowniku znajdujemy indeks kopca max z którego należy usunąć element -> usuwamy też z kopca min i ze słownika - O(log(n))
+remove_max() - analogicznie
+
+2) Jak posortować n-elementową tablicę liczb rzeczywistych, które przyjmują tylko log n różnych
+wartości? Uzasadnić poprawność algorytmu i oszacować złożoność.
+
+-> tworzymy nową log(n)-elementową tablicę struktur z polami: wartość i ilość wystąpień - O(n)
+sortujemy jakimś szybkim sortowaniem np.quicksortem O(log(n)log(log(n)))
+mając posortowane wartości każdą z nich wpisujemy z powrotem do pierwotnej tablicy, tyle razy ile jej wystąpień zliczyliśmy - O(n)
+
+3) Proszę zaproponować algorytm który dla n^2 elementowej tablicy A zapisze w drugiej n^2 elementowej tablicy B taką permutacje elementów z A,
+że: suma kawałka tablicy od i * n do (i + 1) * n poczynając od i = 0 jest mniejsza lub równa sumie kawałka od j * n do (j + 1) * n poczynając od j = 1
+
+-> tworzymy nową n-elementową tablicę struktur C zawierającą pola: tablica n liczb z n^2 elementowej tablicy, suma tej tablicy
+sortujemy tablicę C przyjmując za klucz sumy przechowywanych przez nią n-elementowych tablic - O(nlog(n))
+mając posortowaną tablice C po sumach przepisujemy dane do tablicy B na zasadzie: ze znajdującej się pod C[0] n-elementowej tablicy wpisujemy wszystkie n liczb do tablicy B -> idziemy do C[1] etc O(n^2)
+
+4) Dana jest n elementowa tablica A zawierająca liczby naturalne (potencjalnie bardzo duże). Wiadomo, że tablica A powstała w dwóch krokach. Najpierw wygenerowano losowo (z nieznanym
+rozkładem) n różnych liczn nieparzystych i posortowano je rosnąco. Następnie wybrano losowo log(n) elementów powstałej tablicy i zamieniono je na losowo wybrane liczby parzyste. Proszę
+zaproponować (bez implementacji!) algorytm sortowania tak powstałych danych. Algorytm powinien być możliwie jak najszybszy. Proszę oszacować i podać jego złożoność czasową.
+
+-> tworzymy 2 nowe tablice: jedną log(n)-elementową do której wpisujemy liczby parzyste i jedną n - log(n)-elementową do której przepisujemy elementy nieparzyste(jest już posortowana) - O(n)
+sortujemy tablicę licz parzystych wykorzystując np.quicksorta - O(log(n)log(log(n))
+scalamy tablice liczb nieparzystych i parzystych poczynając od ich pierwszych elementów i porównując je między sobą - O(n)
+
