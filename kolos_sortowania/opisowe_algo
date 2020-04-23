@@ -1,0 +1,24 @@
+Zadanie 2
+Dane są dwa zbiory liczb, reprezentowane jako tablice rozmiarów m i n, gdzie m jest znacznie mniejsze od n.
+Zaproponuj algorytm, który sprawdzi, czy zbiory są rozłączne.
+
+-> sortujemy tablice m - O(mlog(m))
+lecimy po tablicy n i dla kazdej liczby z tablicy n wywolujemy binary search na tablicy m - O(nlog(m))
+ostateczna złożoność - O((m+n)log(m))
+
+
+Zadanie 3
+Dana jest tablica liczb rzeczywistych wielkości n reprezentująca kopiec minimum (array-based heap).
+Mając daną liczbę rzeczywistą x sprawdź, czy k-ty najmniejszy element jest większy lub równy x.
+
+1) -> ściągamy kelementów z kopca min - O(klog(n))
+porównujemy ten element z x
+
+2) -> zliczamy ilość elementow mniejszych od x: (wchodzimy w dzieci, gdy wierzchołek < x) - O(k)
+
+
+Zadanie 4
+Dana jest tablica 2n liczb rzeczywistych. Zaproponuj algorytm, który podzieli te liczby na n par w taki sposób, że podział będzie miał najmniejszą maksymalną sumę liczb w parze. Przykładowo, dla liczb (1, 3, 5, 9) możemy mieć podziały ((1,3),(5,9)), ((1,5),(3,9)), oraz ((1,9),(3,5)). Sumy par dla tych podziałów to (4, 14), (6, 12) oraz (10, 8), w związku z tym maksymalne sumy to 14, 12 oraz 10. Wynika z tego, że ostatni podział ma najmniejszą maksymalną sumę.
+
+-> sortujemy tablicę O(2nlog(2n))
+-> łączymy w pary najbardziej skrajne liczby: aktualnie najmniejszą i aktualnie największą

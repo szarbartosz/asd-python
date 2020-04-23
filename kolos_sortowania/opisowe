@@ -36,3 +36,11 @@ zaproponować (bez implementacji!) algorytm sortowania tak powstałych danych. A
 sortujemy tablicę licz parzystych wykorzystując np.quicksorta - O(log(n)log(log(n))
 scalamy tablice liczb nieparzystych i parzystych poczynając od ich pierwszych elementów i porównując je między sobą - O(n)
 
+5) Dana jest nieskończona tablica A, gdzie pierwsze n pozycji zawiera posortowane liczby naturalne, a reszta tablicy ma wartości None. Nie jest dana wartość n.
+Przedstaw algorytm, który dla danej liczby naturalnej x znajdzie indeks w tablicy, pod którym znajduje się wartość x. Jeżeli nie ma jej w tablicy, to należy zwrócić None.
+
+-> musimy wykonać przeszukiwaniei binarne, lecz aby to zrobic musimy znalezc skrajny prawy indeks w tablicy po ktorym występuja same Nony (albo cos w jego okolicy co nie wplynie na prace programu)
+wybieramy jakas wartosc początkową - np 2, a następnie w pętli sprawdzamy czy w tablicy pod tym indeksem znajduje sie liczbawieksza lub x lub None - jeżeli tak - to ta liczba może być naszym "prawym ograniczeniem tablicy
+jeżeli nie - podwajamy (by osiągnąć logarytmiczną złożoność tej operacji) naszą wartość i znów sprawdzamy 2 rzeczy - czy w tablicy pod tym indexem jest liczba > x lub None
+złożoność: znalezienie skrajnego prawego indeksu: O(log(n)), binarysearch: (Olog(n)) -> w sumie: O(nlog(n))
+

@@ -1,0 +1,16 @@
+Bartosz Szar
+
+1) sortujemy liczby w tablicy
+2) rozważamy każdą liczbę w tablicy, zapamiętując również jej indeks w tablicy:
+- ustawiamy się pierwszym wskaźnikiem na najmniejszej liczbie w tablicy
+- ustawiamy sie drugim wskaźnikiem na największej liczbie w tablicy
+- sprawdzamy czy po zsumowaniu 2 liczb wskazywanych przez wskaźniki otrzymaliśmy rozważaną liczbę (przesuwając wskaźniki po tablicy omijamy rozważaną liczbę - znajdująca się pod zapamiętanym indeksem):
+        - jeżeli tak -> rozważamy kolejną liczbę
+        - jeżeli nie to:
+            - jeśli otrzymana suma jest mniejsza niż rozważana liczba, to pierwszym wskaźnikiem przesuwamy się na drugą najmniejszą liczbę po tej wskazywanej przez pierwszy wskaźnik
+            - jeśli otrzymana suma jest większa niż rozważana liczba, to drugim wskaźnikiem przesuwamy się na drugą największą liczbę po tej wskazywanej przez drugi wskaźnik
+        - jeżeli wskażniki się spotkają - zwracamy odpowiedź przeczącą
+- jeżeli rozważyliśmy każdą liczbę i dla każdej znaleźliśmy odpowiednią parę - zwracamy odpowiedź twierdzącą
+
+złożoność:
+dla każdej rozważanej liczby (n) przechodzimy maksymalnie po n - 1 liczbach w tablicy -> O(n^2)
