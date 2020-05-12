@@ -1,4 +1,4 @@
-def dfs_matrix(G, s):
+def dfs_matrix(G):
     V = len(G)
     visited = [False] * V
     parent = [None] * V
@@ -30,6 +30,6 @@ G = [[0,1,1,1,0,0,0,0],
      [0,0,0,0,0,0,0,1],
      [0,0,0,0,0,0,0,0]]
 
-arr = dfs_matrix(G, 0)
+arr = dfs_matrix(G)
 for i in range(len(arr)):
     print(arr[i])
