@@ -1,0 +1,10 @@
+Nauczyłeś się właśnie piec nowe ciasto z wiśniami. W twoim cieście, między każdą parą wiśni przebiega słodka
+żelkowa nitka. Jest on albo czarna (100g cukru), albo czerwona (200g cukru). Chciałeś poczęstować swoich znajomych,
+ale okazało się, że wszyscy są na diecie (przytyło im się przez kwarantannę) i nie zjedzą tak słodkiego ciasta.
+Mając listę par wisienek (długości P), pomiędzy którymi przebiega czarna nitka, liczbę wisienek (n, gdzie P<<n2),
+podaj jak najszybszy algorytm sprawdzający jaką minimalną zawartość cukru w cieście możesz uzyskać, usuwając dowolne
+nitki, ale pamiętając, że po usunięciu nitek musi między każdą parą wisienek istnieć przynajmniej jedna ścieżka.
+
+1)rozważamy graf składający się z izolowanych wierzchołków
+2)dodajemy do grafu czarne krawędzie tworząc las spójnych składowych
+3)łączymy je czerwonymi nitkami
