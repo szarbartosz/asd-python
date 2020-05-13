@@ -1,10 +1,29 @@
+Podaj jak najszybszy algorytm obliczający najdłuższą ścieżkę w ważonym DAG, startując ze źródła s.
+
+- sortujemy DAG topologicznie
+- w takiej kolejności zaczynamy relaksować wierzchołki (z odwróconym znakiem nierówności) - szukamy najdłuższej ścieżki
+
+
 Nauczyłeś się właśnie piec nowe ciasto z wiśniami. W twoim cieście, między każdą parą wiśni przebiega słodka
-żelkowa nitka. Jest on albo czarna (100g cukru), albo czerwona (200g cukru). Chciałeś poczęstować swoich znajomych,
+żelkowa nitka. Jest ona albo czarna (100g cukru), albo czerwona (200g cukru). Chciałeś poczęstować swoich znajomych,
 ale okazało się, że wszyscy są na diecie (przytyło im się przez kwarantannę) i nie zjedzą tak słodkiego ciasta.
 Mając listę par wisienek (długości P), pomiędzy którymi przebiega czarna nitka, liczbę wisienek (n, gdzie P<<n2),
 podaj jak najszybszy algorytm sprawdzający jaką minimalną zawartość cukru w cieście możesz uzyskać, usuwając dowolne
 nitki, ale pamiętając, że po usunięciu nitek musi między każdą parą wisienek istnieć przynajmniej jedna ścieżka.
 
-1)rozważamy graf składający się z izolowanych wierzchołków
-2)dodajemy do grafu czarne krawędzie tworząc las spójnych składowych
-3)łączymy je czerwonymi nitkami
+- rozważamy graf składający się z izolowanych wierzchołków
+- dodajemy do grafu czarne krawędzie tworząc las spójnych składowych
+- łączymy je czerwonymi nitkami (potrzebujemy n-1 czerwonych krwędzi, gdzie n to liczba spójnych składowych)
+
+
+Huragan nawiedził Bajtocję i zniszczył wszystkie biblioteki w kraju. Także drogi wymagają wyremontowania.
+Władca krainy chce odbudować tyle bibliotek, aby wszyscy mieszkańcy mieli do nich dostęp.
+Obywatel miasta ma dostęp do biblioteki jeśli znajduje się w jego mieście lub w dowolnym innym mieście,
+do którego może dojechać Kraina ma n miast i m zniszczonych dróg (dane jako graf w dowolnie wybranej reprezentacji).
+Dany jest też koszt zbudowania biblioteki libraryCost i wyremontowania jednego odcinka drogi
+roadCost (różny dla różnych krawędzi). Oblicz minimalny koszt przedsięwzięcia.
+
+- usuwamy wszystkie drogi, których koszt odbudowy przewyższa zbudowanie biblioteki
+- wykonujemy algorytm kruskala i w każdej spójnej składowej budujemy jedną bibliotekę
+- (alternatywnie po usunięciu wspomnianych krawędzi możemy po prostu zastosować find & union po uprzednim posotrowaniu
+    dróg do odbudowy

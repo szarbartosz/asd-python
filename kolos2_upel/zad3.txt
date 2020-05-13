@@ -1,0 +1,30 @@
+Bartosz Szar
+
+Próbę znalezienia poprawnej kolejności spadania rozpoczynamy od rozważania kolejnych pięter budowanej "wieży" poczynając
+od piętra nr 1. Przy założeniu, że żadne dwa klocki nie zaczynają się w tym samym miejscu, za każdym razem,
+kiedy mam wybrać klocek, który w danym momencie jako pierwszy spadnie na rozważane piętro, wybieramy ten,
+który zaczyna się najwcześniej. W każdym kolejnym kroku wybieram taki klocek, który zaczyna się najwcześniej
+w końcu klocka uprzednio położonego. Jeżeli nie ma już klocka który spełnia powyższe założenia - zaczynamy rozważać
+piętro o 1 wyższe. Ponad to, za każdym razem kiedy chcemy położyć dany klocek posługujemy się pomocniczą srukturą
+w której przechowujemy wysokość wieży zbudowanej na danych przedziałach. Na początku strukturą jest wypełniony zerami
+przedział (podziałka to szerokość najwęższego klocka - w przykładzie z zadania: 1), mający początek w początku
+najwsześniej zaczynającego się klocka a kończońcy się w końcu najpóźniej kończońcego się klocka.) I sprawdzamy
+czy w strukturze pomocniczej na całym przedziale rozważanego klocka znajduje się warstwa o 1 niższa niż rozważane piętro.
+(np jeżeli rozważamy pierwsze piętro i chcemy postawić pierwszy klocek reprezentowany jako przedział (2, 4],
+to w naszej strukturze sprawdzamy czy na całym przedziale (2, 4] istnieje warstwa o wysokości o 1 mniejszej
+niż rozważana przez nas piętro. Jeżeli tak, to zwiększamy o 1 wysokość wieży budowanej na tym obszarze, jeżeli nie,
+to poprawna kolejność nie istnieje).
+
+W każdym kroku, wybór klocka zaczynającego się najwcześniej jest poprawny, ponieważ rozważając daną warstwę i mając
+do wyboru 2 klocki, z których jeden zaczyna się wcześniej niż drugi mamy pewność, że jeżeli istnieje poprawne
+rozwiązanie to klocek zaczynający się wcześniej, leży na piętrze tym samym lub o 1 niższym niż klocek zaczynający się
+później.
+
+Algorytm nie zadziała, gdy usuniemy założenie o tym, że początki klocków mają być parami różne.
+Prosty kontrprzykład odnoszący się do pierwszego rysynku z zadania, jeżeli istniałby dodatkowo klocek K'(4, 6]:
+- mój algorytm najpierw ułoży klocek K1 a następnie może wybrać nowo dodany klocek K', co po dołożeniu na 2
+    piętro klocka K3, a na 3 piętro klocka K4 zablokuje możliwość dołożenia klocka K2
+
+złożoność:
+- czasowa: O(n * długość rozważanego klocka)
+- pamięciowa: O(koniec najpóźniej kończońcego się klocka - początek najwcześniej zaczynającego się klocka)

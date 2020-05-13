@@ -1,0 +1,6 @@
+Bartosz Szar
+
+łączę wszytskie połączone ze sobą oazy w 1, a następnie sprawdzam czy w graf jest hamiltonowski
+
+
+złożoność: O(liczba oaz + n)
